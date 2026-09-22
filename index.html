@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B1D3A">
+<title>Draft Studio — Compete in amazing challenges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo"><span class="mark">//</span>Draft Studio</a>
+    <div class="desktop-tabs">
+      <a href="how-it-works.html">How it Works</a>
+      <a href="challenge-matters.html">Why Challenges?</a>
+      <a href="#apply" class="btn btn-primary">Apply</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="how-it-works.html">How it Works</a>
+    <a href="challenge-matters.html">Why Challenges?</a>
+    <a href="#apply">Apply</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="blueprint-bg"></div>
+  <div class="hero-light" id="heroLight"></div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span>Real-world challenges for University Students</div>
+    <h1 id="heroHeadline">Compete in<br>amazing<br><em>challenges.</em></h1>
+    <p class="lede">Join a community of students building, solving, and competing — not just watching.</p>
+    <p class="hero-tags">Challenges <span>•</span> Recognition <span>•</span> Community <span>•</span> Opportunities</p>
+    <div class="hero-ctas">
+      <a href="#apply" class="btn btn-primary">Join the community →</a>
+    </div>
+    <div class="hero-dots" id="heroDots" aria-hidden="true">
+      <span class="hero-dot active" data-dot="0"></span>
+      <span class="hero-dot" data-dot="1"></span>
+      <span class="hero-dot" data-dot="2"></span>
+    </div>
+  </div>
+</section>
+
+<section class="cat-section-light" id="challenges">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pick your top 4 interests</div>
+      <h2>Do more of what excites you.</h2>
+      <p>Choose the categories that interest you most. We'll match you with challenges that fit.</p>
+    </div>
+
+    <div class="cat-card-row" id="catCardRow">
+      <button type="button" class="cat-card" data-cat="Startup" data-emoji="🚀" data-desc="Build a business from scratch.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">🚀</span>
+        <span class="cat-card-label">Startup</span>
+        <span class="cat-card-desc">Build a business from scratch.</span>
+      </button>
+      <button type="button" class="cat-card" data-cat="Brain & IQ" data-emoji="🧠" data-desc="Puzzles, logic, and memory.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">🧠</span>
+        <span class="cat-card-label">Brain &amp; IQ</span>
+        <span class="cat-card-desc">Puzzles, logic, and memory.</span>
+      </button>
+      <button type="button" class="cat-card" data-cat="STEM" data-emoji="🔬" data-desc="Science, tech, AI, and research.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">🔬</span>
+        <span class="cat-card-label">STEM</span>
+        <span class="cat-card-desc">Science, tech, AI, and research.</span>
+      </button>
+      <button type="button" class="cat-card" data-cat="Global Impact" data-emoji="🌍" data-desc="Real-world problems worth solving.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">🌍</span>
+        <span class="cat-card-label">Global Impact</span>
+        <span class="cat-card-desc">Real-world problems worth solving.</span>
+      </button>
+      <button type="button" class="cat-card" data-cat="Creative & Design" data-emoji="🎨" data-desc="Visual design and creative work.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">🎨</span>
+        <span class="cat-card-label">Creative &amp; Design</span>
+        <span class="cat-card-desc">Visual design and creative work.</span>
+      </button>
+      <button type="button" class="cat-card" data-cat="Games" data-emoji="♟" data-desc="Strategy, competition, and games.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">♟</span>
+        <span class="cat-card-label">Games</span>
+        <span class="cat-card-desc">Strategy, competition, and games.</span>
+      </button>
+      <button type="button" class="cat-card" data-cat="Business & Careers" data-emoji="💼" data-desc="Real workplace problems to solve.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">💼</span>
+        <span class="cat-card-label">Business &amp; Careers</span>
+        <span class="cat-card-desc">Real workplace problems to solve.</span>
+      </button>
+      <button type="button" class="cat-card" data-cat="Performance & Film" data-emoji="🎭" data-desc="Acting, film, and storytelling.">
+        <span class="cat-card-rank" aria-hidden="true"></span>
+        <span class="cat-card-emoji">🎭</span>
+        <span class="cat-card-label">Performance &amp; Film</span>
+        <span class="cat-card-desc">Acting, film, and storytelling.</span>
+      </button>
+    </div>
+
+    <div class="cat-selection-footer">
+      <p class="cat-selection-note" id="catSelectionNote">Choose up to 4 — tap a selected one again to remove it.</p>
+      <a href="#apply" class="btn cat-continue-btn" id="catContinueBtn" style="display:none;">Continue to sign up →</a>
+    </div>
+  </div>
+</section>
+
+<section class="signup-section" id="apply">
+  <div class="wrap">
+    <div class="signup-card">
+      <div class="signup-head">
+        <div class="eyebrow">Join us</div>
+        <h2>Sign up in under a minute.</h2>
+        <p>Tell us who you are, where you study, and what interests you.</p>
+      </div>
+
+      <form id="signupForm" novalidate>
+        <div class="form-groups">
+
+          <div class="form-group">
+            <span class="group-label">01 · You</span>
+            <div class="form-row">
+              <div class="field">
+                <label for="fname">Full name</label>
+                <input type="text" id="fname" name="fname" placeholder="Type your full name here…" required>
+              </div>
+              <div class="field">
+                <label for="email">University email</label>
+                <input type="email" id="email" name="email" required>
+                <p class="email-nudge" id="emailNudge" style="display:none;">Enter your university email to receive a verified student badge</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span class="group-label">02 · Studies</span>
+            <div class="field" style="margin-bottom:12px;">
+              <label>Where do you study?</label>
+              <div class="region-country-wrap">
+                <div class="chip-row region-chip-row">
+                  <button type="button" class="pick-chip region-chip" data-region="Europe">Europe</button>
+                  <button type="button" class="pick-chip region-chip" data-region="North America">North America</button>
+                  <button type="button" class="pick-chip region-chip" data-region="Latin America">Latin America</button>
+                  <button type="button" class="pick-chip region-chip" data-region="ME & Africa">ME &amp; Africa</button>
+                  <button type="button" class="pick-chip region-chip" data-region="Asia">Asia</button>
+                  <button type="button" class="pick-chip region-chip" data-region="Oceania">Oceania</button>
+                </div>
+                <div class="chip-row country-chip-row" id="countryChipRow"></div>
+                <div class="other-country-field" id="otherCountryField" style="display:none;">
+                  <input type="text" id="otherCountryInput" list="otherCountryOptions" placeholder="Type your country…">
+                  <datalist id="otherCountryOptions"></datalist>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="uni">University</label>
+              <input type="text" id="uni" name="uni" list="uniOptions" placeholder="Start typing your university, or pick a region and country first" required>
+              <datalist id="uniOptions"></datalist>
+              <p class="region-hint">Can't find it on the list? Just type your university's name — it'll still be saved.</p>
+            </div>
+            <div class="field" style="margin-bottom:0;">
+              <label>Year of study</label>
+              <input type="hidden" id="year" name="year">
+              <div class="chip-row year-chip-row">
+                <button type="button" class="pick-chip" data-year="First year">First year</button>
+                <button type="button" class="pick-chip" data-year="Second year">Second year</button>
+                <button type="button" class="pick-chip" data-year="Third year">Third year</button>
+                <button type="button" class="pick-chip" data-year="Final year">Final year</button>
+                <button type="button" class="pick-chip" data-year="Postgraduate">Postgraduate</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- name/email placeholder progression: see app.js -->
+
+
+          <div class="form-group">
+            <span class="group-label">03 · Interest</span>
+            <div class="field" style="margin-bottom:0;">
+              <label>Your top picks</label>
+              <input type="hidden" id="interest" name="interest">
+              <div class="picks-display" id="picksDisplay"></div>
+              <p class="field-hint">Not fully sure yet? You can change these anytime after signing up.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
+        <p class="form-note">We reply to every signup within 10 days.</p>
+        <p class="error-note" id="errorMsg">Something went wrong submitting that — please try again.</p>
+      </form>
+
+      <div class="success-card" id="successCard">
+        <div class="check">✓</div>
+        <h3>You're in.</h3>
+        <p>We'll be in touch within 10 days. Keep an eye on your university inbox.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="explore.html">Explore</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="about.html">About Us</a>
+      <a href="ecosystem.html">Ecosystem</a>
+    </div>
+    <div class="footer-inner">
+      <div class="logo">Draft Studio</div>
+      <div>London, UK · hello@draftstudio.co</div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

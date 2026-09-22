@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B1D3A">
+<title>Why Challenges? — Draft Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .matters-hero{
+    padding:110px 20px 80px;
+    text-align:center;
+    background:var(--ink);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+  }
+  .matters-hero .eyebrow{ justify-content:center; color:var(--amber); margin-bottom:20px; }
+  .matters-hero h1{
+    font-size:clamp(44px, 9.5vw, 96px);
+    line-height:0.98;
+    color:var(--white);
+    letter-spacing:-0.02em;
+  }
+  .matters-hero p{
+    margin:22px auto 0;
+    max-width:460px;
+    font-size:16px;
+    color:rgba(245,243,236,0.65);
+  }
+
+  .statement{
+    padding:100px 24px;
+    text-align:center;
+  }
+  .statement p{
+    max-width:780px;
+    margin:0 auto;
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(26px, 5vw, 46px);
+    line-height:1.25;
+    letter-spacing:-0.01em;
+  }
+  .statement p em{ font-style:italic; color:var(--amber-dim); }
+  .statement.dark{ background:var(--ink); }
+  .statement.dark p{ color:var(--white); }
+  .statement.dark p em{ color:var(--amber); }
+  .statement.light{ background:var(--paper); }
+  .statement.light p{ color:var(--ink); }
+
+  .reasons-band{ background:var(--paper-dim); padding:90px 24px; }
+  .reasons-grid{
+    max-width:900px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:2px;
+    background:rgba(11,29,58,0.1);
+  }
+  @media (max-width:700px){ .reasons-grid{ grid-template-columns:1fr; } }
+  .reason-cell{ background:var(--paper-dim); padding:36px 30px; }
+  .reason-cell .num{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber-dim); }
+  .reason-cell h3{ font-size:22px; margin:14px 0 10px; }
+  .reason-cell p{ font-size:14.5px; color:rgba(11,29,58,0.62); line-height:1.55; }
+  .analogy-carousel-section{ padding-bottom:40px; }
+  .analogy-carousel{ display:flex; align-items:center; justify-content:center; gap:18px; max-width:820px; margin:0 auto; }
+  .analogy-track{ position:relative; flex:1; min-height:1.6em; }
+  .analogy-slide{
+    display:none; position:relative; margin:0 auto !important;
+  }
+  .analogy-slide.active{ display:block; animation:analogyFade .4s ease; }
+  @keyframes analogyFade{ from{ opacity:0; transform:translateY(6px);} to{ opacity:1; transform:translateY(0);} }
+  .analogy-arrow{
+    flex-shrink:0;
+    width:40px; height:40px; border-radius:50%;
+    background:var(--white); border:1.5px solid rgba(11,29,58,0.15);
+    color:var(--ink); font-size:16px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .15s ease, background .15s ease, transform .15s ease;
+  }
+  .analogy-arrow:hover{ border-color:var(--amber-dim); background:#FFF9EC; transform:translateY(-1px); }
+  .analogy-dots{ display:flex; justify-content:center; gap:8px; margin-top:34px; }
+  .analogy-dot{ width:7px; height:7px; border-radius:50%; background:rgba(11,29,58,0.18); cursor:pointer; transition:background .2s ease, transform .2s ease; }
+  .analogy-dot.active{ background:var(--amber-dim); transform:scale(1.3); }
+  @media (max-width:600px){
+    .analogy-carousel{ gap:10px; }
+    .analogy-arrow{ width:34px; height:34px; font-size:14px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo"><span class="mark">//</span>Draft Studio</a>
+    <div class="desktop-tabs">
+      <a href="how-it-works.html">How it Works</a>
+      <a href="challenge-matters.html" class="active">Why Challenges?</a>
+      <a href="index.html#apply" class="btn btn-primary">Apply</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="how-it-works.html">How it Works</a>
+    <a href="challenge-matters.html" class="active">Why Challenges?</a>
+    <a href="index.html#apply">Apply</a>
+  </div>
+</header>
+
+<section class="matters-hero">
+  <div class="blueprint-bg"></div>
+  <div style="position:relative; z-index:2;">
+    <div class="eyebrow"><span class="dot"></span>The bigger picture</div>
+    <h1>Challenges<br>matter.</h1>
+    <p>Not as a slogan. As the actual thesis behind why we built this.</p>
+  </div>
+</section>
+
+<section class="statement light">
+  <p>Most people find out what they're good at <em>by accident</em> — a class they happened to take, a project someone else assigned them.</p>
+</section>
+
+<section class="statement dark">
+  <p>We think that's <em>backwards.</em></p>
+</section>
+
+<section class="statement light analogy-carousel-section">
+  <div class="analogy-carousel" id="analogyCarousel">
+    <button type="button" class="analogy-arrow analogy-arrow-left" id="analogyPrev" aria-label="Previous">←</button>
+    <div class="analogy-track" id="analogyTrack">
+      <p class="analogy-slide active">You can't learn whether you like building things by <em>watching</em> someone else build them.</p>
+      <p class="analogy-slide">// placeholder — another analogy goes here</p>
+      <p class="analogy-slide">// placeholder — another analogy goes here</p>
+      <p class="analogy-slide">// placeholder — another analogy goes here</p>
+    </div>
+    <button type="button" class="analogy-arrow analogy-arrow-right" id="analogyNext" aria-label="Next">→</button>
+  </div>
+  <div class="analogy-dots" id="analogyDots">
+    <span class="analogy-dot active" data-slide="0"></span>
+    <span class="analogy-dot" data-slide="1"></span>
+    <span class="analogy-dot" data-slide="2"></span>
+    <span class="analogy-dot" data-slide="3"></span>
+  </div>
+</section>
+
+<section class="reasons-band">
+  <div class="reasons-grid">
+    <div class="reason-cell">
+      <span class="num">01</span>
+      <h3>It's faster</h3>
+      <p>A challenge compresses months of "maybe I'd be good at this" into a couple of weeks of actually finding out.</p>
+    </div>
+    <div class="reason-cell">
+      <span class="num">02</span>
+      <h3>It's honest</h3>
+      <p>No grading curve, no participation credit. A challenge either worked or it didn't — and that's useful information.</p>
+    </div>
+    <div class="reason-cell">
+      <span class="num">03</span>
+      <h3>It's yours</h3>
+      <p>Nobody assigned it to you. What you build in a challenge is something you chose to make, start to finish.</p>
+    </div>
+    <div class="reason-cell">
+      <span class="num">04</span>
+      <h3>It compounds</h3>
+      <p>Every challenge is proof for the next one — a track record you're building deliberately, not by accident.</p>
+    </div>
+  </div>
+</section>
+
+<section class="statement dark">
+  <p>Talent doesn't need <em>permission.</em> It needs a real problem and somewhere to show up.</p>
+</section>
+
+<section class="explore-cta" style="background:var(--paper);">
+  <h2>See it in action.</h2>
+  <p>Explore the kinds of challenges we're building, or jump straight to signing up.</p>
+  <a href="explore.html" class="btn btn-primary">Explore challenges →</a>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="explore.html">Explore</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="about.html">About Us</a>
+      <a href="ecosystem.html">Ecosystem</a>
+    </div>
+    <div class="footer-inner">
+      <div class="logo">Draft Studio</div>
+      <div>London, UK · hello@draftstudio.co</div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

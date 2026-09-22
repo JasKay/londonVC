@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B1D3A">
+<title>Explore — Draft Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Explore page — bold, oversized sections. One per category, generous whitespace. */
+  .explore-hero{
+    padding:100px 20px 70px;
+    text-align:center;
+    background:var(--paper);
+  }
+  .explore-hero h1{
+    font-size:clamp(42px, 9vw, 92px);
+    line-height:0.98;
+    letter-spacing:-0.02em;
+  }
+  .explore-hero p{
+    margin:20px auto 0;
+    max-width:460px;
+    font-size:16px;
+    color:rgba(11,29,58,0.6);
+  }
+
+  .explore-block{
+    padding:80px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .explore-block-inner{
+    max-width:720px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .explore-block .eyebrow{ justify-content:center; margin-bottom:18px; }
+  .explore-block h2{
+    font-size:clamp(46px, 10vw, 108px);
+    line-height:0.95;
+    color:var(--white);
+    letter-spacing:-0.02em;
+  }
+  .explore-block p{
+    margin:22px auto 0;
+    max-width:420px;
+    font-size:15.5px;
+    color:rgba(245,243,236,0.75);
+  }
+  .explore-block a.explore-link{
+    display:inline-block;
+    margin-top:30px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    color:var(--white);
+    border-bottom:1.5px solid rgba(245,243,236,0.4);
+    padding-bottom:3px;
+    transition:border-color .15s ease, opacity .15s ease;
+  }
+  .explore-block a.explore-link:hover{ border-color:var(--white); }
+
+  .explore-block .bg-emoji{
+    position:absolute;
+    font-size:min(60vw, 520px);
+    opacity:0.07;
+    z-index:1;
+    pointer-events:none;
+    line-height:1;
+    filter:grayscale(1) brightness(2);
+  }
+
+  .explore-cta{
+    background:var(--paper-dim);
+    text-align:center;
+    padding:90px 24px;
+  }
+  .explore-cta h2{ font-size:clamp(28px,5vw,44px); margin-bottom:16px; }
+  .explore-cta p{ color:rgba(11,29,58,0.6); max-width:420px; margin:0 auto 28px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo"><span class="mark">//</span>Draft Studio</a>
+    <div class="desktop-tabs">
+      <a href="how-it-works.html">How it Works</a>
+      <a href="challenge-matters.html">Why Challenges?</a>
+      <a href="index.html#apply" class="btn btn-primary">Apply</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="how-it-works.html">How it Works</a>
+    <a href="challenge-matters.html">Why Challenges?</a>
+    <a href="index.html#apply">Apply</a>
+  </div>
+</header>
+
+<section class="explore-hero">
+  <div class="eyebrow" style="justify-content:center; color:var(--amber-dim); margin-bottom:18px;">Explore</div>
+  <h1>Find your kind<br>of challenge.</h1>
+  <p>Eight ways in. Scroll through, or jump straight to the one that pulls at you.</p>
+</section>
+
+<section class="explore-block" style="background:var(--ink);">
+  <span class="bg-emoji">🚀</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--amber);">01 · Startup</div>
+    <h2>Build a<br>business.</h2>
+    <p>From scratch. Pitching, validating, launching — the whole arc, compressed.</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-block" style="background:var(--blueprint);">
+  <span class="bg-emoji">🧠</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--sky);">02 · Brain &amp; IQ</div>
+    <h2>Outthink<br>everyone.</h2>
+    <p>Puzzles, logic, memory. How fast and sharp can you actually think under pressure?</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-block" style="background:var(--ink);">
+  <span class="bg-emoji">🔬</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--mint);">03 · STEM</div>
+    <h2>Build the<br>future.</h2>
+    <p>Science, tech, AI, and research — the stuff that ends up mattering later.</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-block" style="background:var(--blueprint);">
+  <span class="bg-emoji">🌍</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--amber);">04 · Global Impact</div>
+    <h2>Fix something<br>real.</h2>
+    <p>Real-world problems worth solving — not hypotheticals in a textbook.</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-block" style="background:var(--ink);">
+  <span class="bg-emoji">🎨</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--coral);">05 · Creative &amp; Design</div>
+    <h2>Make something<br>beautiful.</h2>
+    <p>Visual design and creative work — where taste and craft actually count.</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-block" style="background:var(--blueprint);">
+  <span class="bg-emoji">♟</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--sky);">06 · Games</div>
+    <h2>Play to<br>win.</h2>
+    <p>Strategy, competition, and game design — playing them and building them.</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-block" style="background:var(--ink);">
+  <span class="bg-emoji">💼</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--amber);">07 · Business &amp; Careers</div>
+    <h2>Solve like a<br>professional.</h2>
+    <p>Real workplace problems — the kind that don't have a clean answer key.</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-block" style="background:var(--blueprint);">
+  <span class="bg-emoji">🎭</span>
+  <div class="explore-block-inner">
+    <div class="eyebrow" style="color:var(--mint);">08 · Performance &amp; Film</div>
+    <h2>Perform for<br>real.</h2>
+    <p>Acting, film, and storytelling — made for an audience, not a classroom.</p>
+    <a href="index.html#challenges" class="explore-link">See this category →</a>
+  </div>
+</section>
+
+<section class="explore-cta">
+  <h2>Pick your top 4.</h2>
+  <p>Head back to the homepage to choose the categories that interest you most.</p>
+  <a href="index.html#challenges" class="btn btn-primary">Go pick your challenges →</a>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="explore.html">Explore</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="about.html">About Us</a>
+      <a href="ecosystem.html">Ecosystem</a>
+    </div>
+    <div class="footer-inner">
+      <div class="logo">Draft Studio</div>
+      <div>London, UK · hello@draftstudio.co</div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
