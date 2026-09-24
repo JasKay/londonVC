@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F5F3EC">
+
+<title>Why Challenges? — Draft Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+/* =========================================================
+   WHY CHALLENGES HERO
+========================================================= */
+
+.matters-hero{
+  position:relative;
+  overflow:hidden;
+  background:var(--paper);
+  color:var(--ink);
+  padding:0;
+}
+
+.matters-hero .blueprint-bg{
+  opacity:0.025;
+}
+
+.matters-hero-grid{
+  position:relative;
+  z-index:2;
+
+  max-width:1280px;
+  min-height:500px;
+
+  margin:0 auto;
+  padding:60px 40px 50px;
+
+  display:grid;
+  grid-template-columns:0.92fr 1.08fr;
+  align-items:center;
+  gap:35px;
+}
+
+
+/* LEFT SIDE */
+
+.matters-hero-copy{
+  position:relative;
+  z-index:4;
+}
+
+.matters-hero .eyebrow{
+  color:var(--amber-dim);
+  margin-bottom:26px;
+  justify-content:flex-start;
+}
+
+.matters-hero .eyebrow::before{
+  content:"";
+  width:18px;
+  height:1px;
+  background:var(--amber-dim);
+  display:inline-block;
+}
+
+.matters-hero h1{
+  font-family:'Fraunces', serif;
+  font-size:clamp(48px, 5.8vw, 78px);
+  line-height:0.99;
+  letter-spacing:-0.035em;
+  color:var(--ink);
+  max-width:650px;
+}
+
+.matters-hero h1 em{
+  color:var(--amber-dim);
+  font-weight:500;
+  font-style:italic;
+}
+
+
+/* TWO COLUMN DESCRIPTION */
+
+.matters-hero-description{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+
+  max-width:500px;
+  margin-top:26px;
+}
+
+.matters-hero-description p{
+  margin:0;
+  font-family:'Sora', sans-serif;
+  font-size:14px;
+  line-height:1.35;
+  color:rgba(11,29,58,0.62);
+}
+
+
+/* ACTIONS */
+
+.matters-hero-actions{
+  display:flex;
+  align-items:center;
+  gap:35px;
+  margin-top:38px;
+}
+
+.matters-apply{
+  min-width:210px;
+  text-align:center;
+
+  background:var(--ink);
+  color:var(--paper);
+  border-color:var(--ink);
+
+  padding:15px 24px;
+
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.03em;
+}
+
+.matters-apply::after{
+  content:"→";
+  margin-left:35px;
+  color:var(--amber);
+}
+
+.matters-apply:hover{
+  background:var(--amber);
+  border-color:var(--amber);
+  color:var(--ink);
+}
+
+.matters-apply:hover::after{
+  color:var(--ink);
+}
+
+.matters-learn{
+  font-size:13px;
+  color:rgba(11,29,58,0.65);
+  white-space:nowrap;
+  transition:color .15s ease;
+}
+
+.matters-learn span{
+  color:var(--amber-dim);
+  margin-left:9px;
+}
+
+.matters-learn:hover{
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   X IMAGE
+========================================================= */
+
+.matters-hero-visual{
+  position:relative;
+  height:440px;
+  min-width:0;
+}
+
+/*
+   We use the actual artwork cropped from your reference.
+   The CSS mask cuts the rectangular image into the X.
+*/
+
+.hero-x{
+  position:absolute;
+
+  width:680px;
+  height:500px;
+
+  top:50%;
+  left:47%;
+
+  transform:translate(-50%,-50%);
+
+  background-image:url("challenge-x-reference.jpg");
+  background-size:cover;
+  background-position:center;
+
+  /*
+    Creates the large X silhouette.
+  */
+  clip-path:polygon(
+    0 0,
+    31% 0,
+    50% 31%,
+    69% 0,
+    100% 0,
+    68% 50%,
+    100% 100%,
+    69% 100%,
+    50% 69%,
+    31% 100%,
+    0 100%,
+    32% 50%
+  );
+}
+
+
+/* subtle orbit decoration */
+
+.hero-orbit{
+  position:absolute;
+  width:570px;
+  height:320px;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%) rotate(-8deg);
+
+  border:1px solid rgba(201,142,18,0.18);
+  border-radius:50%;
+
+  pointer-events:none;
+}
+
+.hero-orbit::before,
+.hero-orbit::after{
+  content:"";
+  position:absolute;
+
+  width:5px;
+  height:5px;
+
+  background:var(--amber);
+  border-radius:50%;
+}
+
+.hero-orbit::before{
+  left:8px;
+  top:48%;
+}
+
+.hero-orbit::after{
+  right:20px;
+  top:17%;
+}
+
+
+/* =========================================================
+   INTEREST / CHALLENGE BAND
+========================================================= */
+
+.challenge-interest-band{
+  background:var(--paper-dim);
+  padding:34px 24px 62px;
+  border-top:1px solid rgba(11,29,58,0.05);
+}
+
+.challenge-interest-head{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.challenge-interest-head .eyebrow{
+  color:rgba(201,142,18,0.65);
+  margin-bottom:10px;
+}
+
+.challenge-interest-head h2{
+  font-size:clamp(28px,4vw,40px);
+  line-height:1.05;
+}
+
+.challenge-interest-head p{
+  max-width:470px;
+  margin:8px auto 0;
+  font-size:12px;
+  line-height:1.45;
+  color:rgba(11,29,58,0.48);
+}
+
+
+/* CARDS */
+
+.challenge-card-grid{
+  max-width:1280px;
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:14px;
+}
+
+.challenge-mini-card{
+  min-height:245px;
+
+  background:rgba(255,255,255,0.55);
+
+  border:1px solid rgba(11,29,58,0.05);
+  border-radius:5px;
+
+  padding:26px 13px 20px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  text-align:center;
+
+  box-shadow:
+    0 7px 18px rgba(11,29,58,0.04);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease;
+}
+
+.challenge-mini-card:hover{
+  transform:translateY(-5px);
+
+  border-color:rgba(201,142,18,0.28);
+
+  box-shadow:
+    0 12px 26px rgba(11,29,58,0.08);
+}
+
+.challenge-mini-icon{
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:31px;
+  margin-bottom:14px;
+}
+
+.challenge-mini-card h3{
+  font-family:'Sora', sans-serif;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.15;
+  min-height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.challenge-mini-line{
+  width:22px;
+  height:2px;
+
+  background:var(--amber);
+
+  margin:12px auto;
+}
+
+.challenge-mini-card p{
+  font-size:11px;
+  line-height:1.4;
+
+  color:rgba(11,29,58,0.48);
+}
+
+
+/* =========================================================
+   ORIGINAL WHY CHALLENGES CONTENT
+========================================================= */
+
+.statement{
+  padding:100px 24px;
+  text-align:center;
+}
+
+.statement p{
+  max-width:780px;
+  margin:0 auto;
+
+  font-family:'Fraunces', serif;
+  font-weight:500;
+
+  font-size:clamp(26px,5vw,46px);
+  line-height:1.25;
+  letter-spacing:-0.01em;
+}
+
+.statement p em{
+  font-style:italic;
+  color:var(--amber-dim);
+}
+
+.statement.dark{
+  background:var(--ink);
+}
+
+.statement.dark p{
+  color:var(--white);
+}
+
+.statement.dark p em{
+  color:var(--amber);
+}
+
+.statement.light{
+  background:var(--paper);
+}
+
+.statement.light p{
+  color:var(--ink);
+}
+
+
+/* REASONS */
+
+.reasons-band{
+  background:var(--paper-dim);
+  padding:90px 24px;
+}
+
+.reasons-grid{
+  max-width:900px;
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+
+  background:rgba(11,29,58,0.1);
+}
+
+.reason-cell{
+  background:var(--paper-dim);
+  padding:36px 30px;
+}
+
+.reason-cell .num{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  color:var(--amber-dim);
+}
+
+.reason-cell h3{
+  font-size:22px;
+  margin:14px 0 10px;
+}
+
+.reason-cell p{
+  font-size:14.5px;
+  color:rgba(11,29,58,0.62);
+  line-height:1.55;
+}
+
+
+/* ANALOGY CAROUSEL */
+
+.analogy-carousel-section{
+  padding-bottom:40px;
+}
+
+.analogy-carousel{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:18px;
+
+  max-width:820px;
+  margin:0 auto;
+}
+
+.analogy-track{
+  position:relative;
+  flex:1;
+  min-height:1.6em;
+}
+
+.analogy-slide{
+  display:none;
+  position:relative;
+  margin:0 auto !important;
+}
+
+.analogy-slide.active{
+  display:block;
+  animation:analogyFade .4s ease;
+}
+
+@keyframes analogyFade{
+  from{
+    opacity:0;
+    transform:translateY(6px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.analogy-arrow{
+  flex-shrink:0;
+
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+
+  background:var(--white);
+  border:1.5px solid rgba(11,29,58,0.15);
+
+  color:var(--ink);
+  font-size:16px;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:
+    border-color .15s ease,
+    background .15s ease,
+    transform .15s ease;
+}
+
+.analogy-arrow:hover{
+  border-color:var(--amber-dim);
+  background:#FFF9EC;
+  transform:translateY(-1px);
+}
+
+.analogy-dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:34px;
+}
+
+.analogy-dot{
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:rgba(11,29,58,0.18);
+
+  cursor:pointer;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.analogy-dot.active{
+  background:var(--amber-dim);
+  transform:scale(1.3);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.explore-cta{
+  padding:90px 0;
+  text-align:center;
+  background:var(--paper);
+}
+
+.explore-cta .wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.explore-cta h2{
+  font-size:clamp(30px,5vw,44px);
+  line-height:1.1;
+}
+
+.explore-cta p{
+  max-width:520px;
+  margin:14px auto 24px;
+
+  color:rgba(11,29,58,0.65);
+  font-size:15px;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  border-top:1px solid rgba(245,243,236,0.14);
+  border-bottom:1px solid rgba(245,243,236,0.14);
+}
+
+.footer-links a{
+  position:relative;
+
+  padding:24px 18px;
+
+  font-family:'Fraunces', serif;
+  font-size:20px;
+
+  letter-spacing:-0.01em;
+
+  color:rgba(245,243,236,0.78);
+
+  text-align:center;
+
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.footer-links a:not(:last-child){
+  border-right:1px solid rgba(245,243,236,0.12);
+}
+
+.footer-links a::after{
+  content:"↗";
+
+  display:block;
+
+  margin-top:6px;
+
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px;
+
+  color:var(--amber);
+
+  opacity:.65;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+.footer-links a:hover{
+  background:rgba(245,243,236,0.05);
+  color:var(--white);
+}
+
+.footer-links a:hover::after{
+  transform:translate(3px,-3px);
+  opacity:1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width:1050px){
+
+  .challenge-card-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+}
+
+
+@media (max-width:850px){
+
+  .matters-hero-grid{
+    grid-template-columns:1fr;
+    padding:55px 24px 30px;
+  }
+
+  .matters-hero-copy{
+    max-width:650px;
+  }
+
+  .matters-hero-visual{
+    height:420px;
+  }
+
+  .hero-x{
+    left:50%;
+    width:620px;
+    max-width:105vw;
+  }
+
+}
+
+
+@media (max-width:700px){
+
+  .reasons-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+@media (max-width:600px){
+
+  .matters-hero-grid{
+    padding:45px 20px 20px;
+  }
+
+  .matters-hero h1{
+    font-size:clamp(44px,13vw,62px);
+  }
+
+  .matters-hero-description{
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+
+  .matters-hero-description p{
+    font-size:12px;
+  }
+
+  .matters-hero-actions{
+    gap:20px;
+  }
+
+  .matters-apply{
+    min-width:170px;
+  }
+
+  .matters-apply::after{
+    margin-left:20px;
+  }
+
+  .matters-hero-visual{
+    height:330px;
+  }
+
+  .hero-x{
+    width:480px;
+    height:360px;
+  }
+
+  .hero-orbit{
+    width:390px;
+    height:220px;
+  }
+
+  .challenge-interest-band{
+    padding:35px 16px 50px;
+  }
+
+  .challenge-card-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .challenge-mini-card{
+    min-height:210px;
+  }
+
+  .analogy-carousel{
+    gap:10px;
+  }
+
+  .analogy-arrow{
+    width:34px;
+    height:34px;
+    font-size:14px;
+  }
+
+  .footer-links{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-links a{
+    padding:20px 10px;
+    font-size:18px;
+  }
+
+  .footer-links a:nth-child(2){
+    border-right:none;
+  }
+
+  .footer-links a:nth-child(-n+2){
+    border-bottom:1px solid rgba(245,243,236,0.12);
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ======================================================
+     NAV
+====================================================== -->
+
+<header>
+
+  <div class="wrap header-inner">
+
+    <a href="index.html" class="logo">
+      <span class="mark">//</span>
+      Draft Studio
+    </a>
+
+    <div class="desktop-tabs">
+
+      <a href="index.html" aria-label="Home">⌂</a>
+
+      <a href="how-it-works.html">
+        How it Works
+      </a>
+
+      <a href="challenge-matters.html" class="active">
+        Why Challenges?
+      </a>
+
+      <a href="index.html#apply" class="btn btn-primary">
+        Apply
+      </a>
+
+    </div>
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Menu">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="how-it-works.html">
+      How it Works
+    </a>
+
+    <a href="challenge-matters.html" class="active">
+      Why Challenges?
+    </a>
+
+    <a href="index.html#apply">
+      Apply
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="matters-hero">
+
+  <div class="blueprint-bg"></div>
+
+  <div class="matters-hero-grid">
+
+    <div class="matters-hero-copy">
+
+      <div class="eyebrow">
+        DISCOVER. BUILD. IMPACT.
+      </div>
+
+      <h1>
+        Compete in<br>
+        amazing <em>challenges.</em>
+      </h1>
+
+
+      <div class="matters-hero-description">
+
+        <p>
+          Explore what excites you.<br>
+          Meet ambitious students.
+        </p>
+
+        <p>
+          Build real-world experience.<br>
+          Make your mark.
+        </p>
+
+      </div>
+
+
+      <div class="matters-hero-actions">
+
+        <a
+          href="index.html#apply"
+          class="btn matters-apply">
+          APPLY NOW
+        </a>
+
+        <a
+          href="how-it-works.html"
+          class="matters-learn">
+
+          Learn how it works
+          <span>→</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="matters-hero-visual">
+
+      <div class="hero-orbit"></div>
+
+      <div
+        class="hero-x"
+        role="img"
+        aria-label="Global community connected through challenges">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     CHALLENGE INTERESTS
+====================================================== -->
+
+<section class="challenge-interest-band">
+
+  <div class="challenge-interest-head">
+
+    <div class="eyebrow">
+      PICK YOUR TOP 4 INTERESTS
+    </div>
+
+    <h2>
+      Do what excites you.
+    </h2>
+
+    <p>
+      Choose the categories that interest you most.
+      We'll match you with challenges that fit your passions.
+    </p>
+
+  </div>
+
+
+  <div class="challenge-card-grid">
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">🚀</div>
+      <h3>Startup</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Build ideas, validate concepts, and launch the next big thing.
+      </p>
+    </div>
+
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">🔬</div>
+      <h3>STEM</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Solve complex problems with science, tech, engineering and maths.
+      </p>
+    </div>
+
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">✏️</div>
+      <h3>Creative &amp;<br>Design</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Design, imagine and create meaningful experiences.
+      </p>
+    </div>
+
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">🌐</div>
+      <h3>Global<br>Impact</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Tackle real-world issues and build a better future.
+      </p>
+    </div>
+
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">💼</div>
+      <h3>Business &amp;<br>Careers</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Strategize, analyze and solve business challenges.
+      </p>
+    </div>
+
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">🧠</div>
+      <h3>Brain &amp; IQ</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Test your mind and push the limits of your thinking.
+      </p>
+    </div>
+
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">🎮</div>
+      <h3>Games</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Design, code and play the future of games.
+      </p>
+    </div>
+
+
+    <div class="challenge-mini-card">
+      <div class="challenge-mini-icon">🎭</div>
+      <h3>Performance</h3>
+      <span class="challenge-mini-line"></span>
+      <p>
+        Tell stories, perform and inspire audiences.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     ORIGINAL WHY CHALLENGES STORY
+====================================================== -->
+
+<section class="statement light">
+
+  <p>
+    Most people find out what they're good at
+    <em>by accident</em> — a class they happened
+    to take, a project someone else assigned them.
+  </p>
+
+</section>
+
+
+<section class="statement dark">
+
+  <p>
+    We think that's <em>backwards.</em>
+  </p>
+
+</section>
+
+
+<section class="statement light analogy-carousel-section">
+
+  <div class="analogy-carousel" id="analogyCarousel">
+
+    <button
+      type="button"
+      class="analogy-arrow analogy-arrow-left"
+      id="analogyPrev"
+      aria-label="Previous">
+      ←
+    </button>
+
+
+    <div class="analogy-track" id="analogyTrack">
+
+      <p class="analogy-slide active">
+        You can't learn whether you like building things
+        by <em>watching</em> someone else build them.
+      </p>
+
+      <p class="analogy-slide">
+        // placeholder — another analogy goes here
+      </p>
+
+      <p class="analogy-slide">
+        // placeholder — another analogy goes here
+      </p>
+
+      <p class="analogy-slide">
+        // placeholder — another analogy goes here
+      </p>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="analogy-arrow analogy-arrow-right"
+      id="analogyNext"
+      aria-label="Next">
+      →
+    </button>
+
+  </div>
+
+
+  <div class="analogy-dots" id="analogyDots">
+
+    <span class="analogy-dot active" data-slide="0"></span>
+    <span class="analogy-dot" data-slide="1"></span>
+    <span class="analogy-dot" data-slide="2"></span>
+    <span class="analogy-dot" data-slide="3"></span>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     REASONS
+====================================================== -->
+
+<section class="reasons-band">
+
+  <div class="reasons-grid">
+
+    <div class="reason-cell">
+
+      <span class="num">01</span>
+
+      <h3>It's faster</h3>
+
+      <p>
+        A challenge compresses months of "maybe I'd be good at this"
+        into a couple of weeks of actually finding out.
+      </p>
+
+    </div>
+
+
+    <div class="reason-cell">
+
+      <span class="num">02</span>
+
+      <h3>It's honest</h3>
+
+      <p>
+        No grading curve, no participation credit.
+        A challenge either worked or it didn't —
+        and that's useful information.
+      </p>
+
+    </div>
+
+
+    <div class="reason-cell">
+
+      <span class="num">03</span>
+
+      <h3>It's yours</h3>
+
+      <p>
+        Nobody assigned it to you.
+        What you build in a challenge is something
+        you chose to make, start to finish.
+      </p>
+
+    </div>
+
+
+    <div class="reason-cell">
+
+      <span class="num">04</span>
+
+      <h3>It compounds</h3>
+
+      <p>
+        Every challenge is proof for the next one —
+        a track record you're building deliberately,
+        not by accident.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="statement dark">
+
+  <p>
+    Talent doesn't need <em>permission.</em>
+    It needs a real problem and somewhere to show up.
+  </p>
+
+</section>
+
+
+<!-- ======================================================
+     CTA
+====================================================== -->
+
+<section class="explore-cta">
+
+  <div class="wrap">
+
+    <h2>
+      See it in action.
+    </h2>
+
+    <p>
+      Explore the kinds of challenges we're building,
+      or jump straight to signing up.
+    </p>
+
+    <a
+      href="explore.html"
+      class="btn btn-primary">
+      Explore challenges →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+  <div class="wrap">
+
+    <div class="footer-links">
+
+      <a href="explore.html">
+        Explore
+      </a>
+
+      <a href="get-involved.html">
+        Get Involved
+      </a>
+
+      <a href="about.html">
+        About Us
+      </a>
+
+      <a href="ecosystem.html">
+        Ecosystem
+      </a>
+
+    </div>
+
+
+    <div class="footer-inner">
+
+      <div class="logo">
+        Draft Studio
+      </div>
+
+      <div>
+        London, UK · hello@draftstudio.co
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
